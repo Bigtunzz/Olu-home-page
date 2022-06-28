@@ -1,27 +1,17 @@
 const lastSection = document.querySelector('.last-section')
 const vButton = document.querySelector('.v-upside')
-const hamburger = document.querySelector('.hamburger')
-const navLinks = document.querySelector('.nav-links')
 const hambugerMenu = document.querySelector('.hambuger-menu')
-const line = document.querySelector('.line')
-const back = document.querySelector('.back')
-const aa = document.querySelector('.aa')
-
+const navPositionStyle = document.querySelector('.nav-position-style')
+const arr = [document.querySelector('.hamburger'), document.querySelector('.line'), document.querySelector('.back')]
 
 vButton.addEventListener('click', () => {
     lastSection.classList.toggle('active')
     vButton.classList.toggle('active')
 })
 
-hamburger.addEventListener('click', () => {
-    hambugerMenu.classList.toggle('active')
-    aa.classList.toggle('active')
-})
-line.addEventListener('click', () => {
-    hambugerMenu.classList.toggle('active')
-    aa.classList.toggle('active')
-})
-back.addEventListener('click', () => {
-    hambugerMenu.classList.toggle('active')
-    aa.classList.toggle('active')
-})
+arr.forEach(element => {
+    element.addEventListener('click', () =>{
+        hambugerMenu.classList.toggle('active')
+        navPositionStyle.classList.toggle('active')  
+    })
+});
